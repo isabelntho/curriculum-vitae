@@ -3,4 +3,4 @@
 [![Deploy CV to Pages](https://github.com/mcanouil/curriculum-vitae/actions/workflows/pages.yml/badge.svg)](https://github.com/mcanouil/curriculum-vitae/actions/workflows/pages.yml)
 <!-- badges: end -->
 
-This is the repository for the CV of Mickaël Canouil.
+CV for Isabel Nicholson Thomas, based on the repository of Mickael Canouil
