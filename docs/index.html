@@ -33966,6 +33966,7 @@ border-radius: 30%;
 padding: 5pt;
 }
 @media print {
+  /* Keep the timeline line visible */
   .blocks {
     align-items: stretch;
   }
@@ -33974,6 +33975,12 @@ padding: 5pt;
     min-height: 0;
     align-self: stretch;
   }
+
+  /* Keep only the sidebar coloured */
+  @page { background: none; }
+  body { background: white; }
+  #aside { background: var(--sidebar-background-color); }
+  #main { background: white; }
 }
 </style>
     
