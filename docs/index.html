@@ -33967,38 +33967,25 @@ padding: 5pt;
 }
 @media print {
   /* Keep the timeline line visible */
-  .blocks {
-    align-items: stretch;
-  }
-  .decorator {
-    height: auto;
-    min-height: 0;
-    align-self: stretch;
-  }
+  .blocks { align-items: stretch; }
+  .decorator { height: auto; min-height: 0; align-self: stretch; }
 
-  /* Sidebar colour on every printed page */
-  @page { background: none; }
-
-  body {
-    background: white;
+  /* Paint the sidebar background per page */
+  html {
+    background: linear-gradient(
+      to right,
+      white 0,
+      white calc(100% - var(--sidebar-width)),
+      var(--sidebar-background-color) calc(100% - var(--sidebar-width)),
+      var(--sidebar-background-color) 100%
+    );
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: var(--sidebar-width);
-    background: var(--sidebar-background-color);
-    z-index: -1;
-  }
-
-  /* Do not rely on #aside height in print */
+  body { background: transparent; }
+  #main { background: transparent; }
   #aside { background: transparent; }
-  #main  { background: white; }
 }
 
 </style>
@@ -34179,7 +34166,7 @@ Delivered project reports and contributed to proposals for public & private stak
 <em><a href="https://doi.org/10.1016/j.ecoinf.2024.102819">Ecological Informatics</a></em>
 </div>
 </div>
-<div id="msc-thesis-pup" class="section level3">
+<div id="msc-thesis-pub" class="section level3">
 <h3>Exploring Switzerland’s land cover change dynamics using a national statistical survey</h3>
 <p><u>Isabel Nicholson Thomas</u> and Gregory Giuliani</p>
 <p>N/A</p>
