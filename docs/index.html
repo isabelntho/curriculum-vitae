@@ -33970,23 +33970,29 @@ padding: 5pt;
   .blocks { align-items: stretch; }
   .decorator { height: auto; min-height: 0; align-self: stretch; }
 
-  /* Paint the sidebar background per page */
-  html {
+  /* Define sidebar width for browser print (Paged.js variables are not available) */
+  :root {
+    --sidebar-background-width: calc(var(--margin-right) + var(--sidebar-width));
+  }
+
+  /* Sidebar background on every page */
+  @page {
     background: linear-gradient(
-      to right,
-      white 0,
-      white calc(100% - var(--sidebar-width)),
-      var(--sidebar-background-color) calc(100% - var(--sidebar-width)),
-      var(--sidebar-background-color) 100%
+      to left,
+      var(--sidebar-background-color) 0,
+      var(--sidebar-background-color) var(--sidebar-background-width),
+      white var(--sidebar-background-width),
+      white 100%
     );
+  }
+
+  html, body, #main, #aside {
+    background: transparent;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-
-  body { background: transparent; }
-  #main { background: transparent; }
-  #aside { background: transparent; }
 }
+
 
 </style>
     
