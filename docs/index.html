@@ -33976,12 +33976,31 @@ padding: 5pt;
     align-self: stretch;
   }
 
-  /* Keep only the sidebar coloured */
+  /* Sidebar colour on every printed page */
   @page { background: none; }
-  body { background: white; }
-  #aside { background: var(--sidebar-background-color); }
-  #main { background: white; }
+
+  body {
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    background: var(--sidebar-background-color);
+    z-index: -1;
+  }
+
+  /* Do not rely on #aside height in print */
+  #aside { background: transparent; }
+  #main  { background: white; }
 }
+
 </style>
     
   </head>
@@ -34101,8 +34120,7 @@ Developing a quantitative model for optimising restoration decisions under uncer
 <p>Oct. 2023 - Present</p>
 <p> Managed a research task within an international EU Horizon 2020 project.<br />
 Contributed to a co-creation process for a data visualisation platform with stakeholders in cantonal administration.<br />
-Supervised the research of a scientific assistant and multiple students.<br />
-Taught and coordinated a Master’s level GIS course.</p>
+Supervised the research of a scientific assistant and multiple students.</p>
 </div>
 <div id="scientific-assistant-eth-zurich" class="section level3">
 <h3>Scientific Assistant </h3>
@@ -34127,9 +34145,7 @@ Designed geospatial visualisation dashboards.</p>
 <p>Edinburgh, United Kingdom</p>
 <p>Apr. 2018 - Aug. 2020</p>
 <p>Developed tools and workflows for the automated processing, analysis, and quality assurance of spatial air pollution datasets.<br />
-Delivered project reports and contributed to proposals for public & private stakeholders. 
-</p>
-
+Delivered project reports and contributed to proposals for public & private stakeholders. </p>
 </div>
 
 </div>
@@ -34163,10 +34179,24 @@ Delivered project reports and contributed to proposals for public & private stak
 <em><a href="https://doi.org/10.1016/j.ecoinf.2024.102819">Ecological Informatics</a></em>
 </div>
 </div>
+<div id="msc-thesis-pup" class="section level3">
+<h3>Exploring Switzerland’s land cover change dynamics using a national statistical survey</h3>
+<p><u>Isabel Nicholson Thomas</u>and Gregory Giuliani</p>
+<p>N/A</p>
+<p>Jul. 2023</p>
+<div class="aside">
+<em><a href="https://doi.org/10.3390/land12071386">Land</a></em>
+</div>
+</div>
 
 <div id="publications-7-35" class="section level2" data-icon="newspaper">
-<h2>Teaching and outreach</h2>
-To be completed...
+<h2>Teaching</h2>
+<div id="LPES" class="section level3">
+<h3>Landscape Planning and Environmental Systems: GIS exercises</h3>
+<p>N/A</p>
+<p>Sep. 2023 - Present</p>
+<p>Taught and coordinated a Master’s level GIS course, in which students are trained in spatial data analysis and visualisation techniques to encorporate environmental systems into planning processes. </p>
+</div>
 
 <div id="references" class="section level2">
   <h2>References</h2>
