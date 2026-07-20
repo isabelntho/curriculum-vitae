@@ -33996,9 +33996,11 @@ padding: 5pt;
 /* Sections whose last entry ends in a description paragraph gain ~1em of
    trailing space from that paragraph's collapsed bottom margin. Publications
    ends in an absolutely-positioned .aside (zero height), so it needs the
-   equivalent spacing added explicitly to match. */
+   equivalent spacing added explicitly to match.
+   Use padding, not margin: a bottom margin here would collapse against the
+   next section's .main-block margin-top and have almost no effect. */
 #publications-7-35 {
-  margin-bottom: 0.12in;
+  padding-bottom: 0.15in;
 }
 
 
